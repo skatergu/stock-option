@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>AJ Stock Derivative Model</span>
+  <span class="fill-left"></span>
+  <div>
+    <mat-button-toggle-group #group="matButtonToggleGroup" value="optionModel"> <!-- # means the name of the dom element -->
+      <mat-button-toggle routerLink="/optionModel" value="optionModel">Option Model</mat-button-toggle>
+      <mat-button-toggle routerLink="/optionInfo" value="optionInfo">Option Lookup</mat-button-toggle>
+      <mat-button-toggle routerLink="/ananTest" value="ananTest">Anya TEST</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</mat-toolbar>
+<div class="basic-container">
+  <router-outlet></router-outlet>
+</div>

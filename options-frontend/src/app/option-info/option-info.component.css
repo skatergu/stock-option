@@ -1,0 +1,33 @@
+
+.symbol-input
+{
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    border-radius: 0;
+}
+
+.symbol-search
+{
+    display: inline-block;
+    padding-bottom: 1px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0;
+    border: 1px solid transparent
+}
+
+.space30 {
+    margin-left: 30px;
+}
+
+.result-padding {
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+.result-font {
+    font-size: 20px;
+}

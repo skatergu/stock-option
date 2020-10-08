@@ -1,0 +1,11 @@
+<div *ngIf="data.length>0">
+    <google-chart #chart
+        [title]="title"
+        [type]="type"
+        [data]="data"
+        [columns]="columnNames"
+        [options]="options"
+        [width]="width"
+        [height]="height">
+    </google-chart>
+  </div>

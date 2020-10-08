@@ -1,0 +1,51 @@
+<div>
+    <form [formGroup]="optionReq" >
+      <mat-form-field class="symbol-input" appearance="outline">
+        <mat-label>Underlying Symbol</mat-label>
+        <input matInput placeholder="Underlying symbol" #inputSymbol formControlName="ulSymbol">
+      </mat-form-field>
+      <button class="symbol-search" mat-raised-button (click)="onUlChange()"><i class="material-icons">search</i></button> 
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Expiries: </mat-label>
+        <mat-select formControlName="expiry" (selectionChange)="onExpiryChange()" >
+          <mat-option *ngFor="let expiry of expiries" [value]="expiry">{{expiry * 1000 | date: 'mediumDate'}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Strike: </mat-label>
+        <mat-select formControlName ="strike" (selectionChange)="clearResult()">
+          <mat-option *ngFor="let strike of strikes" [value]="strike">{{strike}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Option Type (C/P): </mat-label>
+        <mat-select formControlName ="optionType" >
+          <mat-option *ngFor="let type of optionTypes" [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary" (click)="onSubmit()" >Search</button>
+      </div>
+
+      </form>
+      
+
+      <div class="result-padding" *ngIf='optionRes'>
+        <p class="result-font"> Option Symbol: {{ optionRes.symbol | uppercase }} </p>
+        <p class="result-font"> Underlying Stock: {{ getControlValue(['ulSymbol']) | uppercase}} </p>
+        <p class="result-font"> Underlying Stock Price: {{ optionRes.ulPrice }} </p>
+        <p class="result-font"> Expiration: {{ optionRes.expirationDate | date: 'mediumDate' }} </p>
+        <p class="result-font"> Strike: {{ optionRes.strike }} </p>
+        <p class="result-font"> Option type: {{ optionRes.type}} </p>
+        <p class="result-font"> Last trade price: {{ optionRes.lastPrice}} </p>
+        <p class="result-font"> bid: {{ optionRes.bid}} </p>
+        <p class="result-font"> ask: {{ optionRes.ask}} </p>
+        <p class="result-font"> Implied Vol: {{ optionRes.iv | number : '1.2-2'}}</p>
+        
+      </div>
+
+</div>

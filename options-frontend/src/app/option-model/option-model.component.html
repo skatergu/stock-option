@@ -1,0 +1,42 @@
+<div>
+    <form [formGroup]="optionReq" (ngSubmit) = "onFormSubmit()">
+      <mat-form-field class="symbol-input" appearance="outline">
+        <mat-label>Quote Lookup</mat-label>
+        <input matInput placeholder="Underlying symbol" #inputSymbol formControlName="ulSymbol">
+      </mat-form-field>
+      <button class="symbol-search" mat-raised-button type="submit"><i class="material-icons">search</i></button> 
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Expiries: </mat-label>
+        <mat-select formControlName="expiry" (selectionChange)="onChange()">
+          <mat-option *ngFor="let expiry of expiries" [value]="expiry">{{expiry * 1000 | date: 'mediumDate'}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Option Type (C/P): </mat-label>
+        <mat-select formControlName ="optionType" (selectionChange)="onChange()">
+          <mat-option *ngFor="let type of optionTypes" [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Price Type: </mat-label>
+        <mat-select formControlName ="priceType" (selectionChange)="onChange()">
+          <mat-option *ngFor="let priceType of priceTypes" [value]="priceType">{{priceType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field class="space30" appearance="fill">
+        <mat-label>Models: </mat-label>
+        <mat-select formControlName="model" (selectionChange)="onChange()">
+          <mat-option *ngFor="let model of models" [value]="model">{{model}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+</div>
+<div>
+   <app-chart [data] = "data" 
+              [title]="title"></app-chart>
+</div>
