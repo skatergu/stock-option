@@ -1,5 +1,6 @@
 ## Table of contents
 * [General info](#general-info)
+* [Application Screenshots](#application-screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
@@ -8,6 +9,9 @@ This application provides a user-friendly interface to find trade opportunities
 based on the difference between real price and model price. It also provides multiple models, 
 so users can find solid trade opportunities by observing different model prices.
 	
+## Application Screenshots
+![FitTwo price model](images/fitTwoCall.png)
+
 ## Technologies
 Project is created with 
 
@@ -21,7 +25,6 @@ Frontend:
 ## Setup
 * [Build Frontend](https://github.com/skatergu/stock-option/blob/master/options-frontend)
 * [Build Backend](https://github.com/skatergu/stock-option/tree/master/options-backend)
-
 
 ## Stock Option Pricing
 
