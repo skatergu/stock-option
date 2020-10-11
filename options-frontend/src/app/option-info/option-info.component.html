@@ -38,7 +38,7 @@
         <p class="result-font"> Option Symbol: {{ optionRes.symbol | uppercase }} </p>
         <p class="result-font"> Underlying Stock: {{ getControlValue(['ulSymbol']) | uppercase}} </p>
         <p class="result-font"> Underlying Stock Price: {{ optionRes.ulPrice }} </p>
-        <p class="result-font"> Expiration: {{ optionRes.expirationDate | date: 'mediumDate' }} </p>
+        <p class="result-font"> Expiration: {{ optionRes.expirationDate*1000 | date: 'mediumDate' }} </p>
         <p class="result-font"> Strike: {{ optionRes.strike }} </p>
         <p class="result-font"> Option type: {{ optionRes.type}} </p>
         <p class="result-font"> Last trade price: {{ optionRes.lastPrice}} </p>
