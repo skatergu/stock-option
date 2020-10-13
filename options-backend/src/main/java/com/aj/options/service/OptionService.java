@@ -141,6 +141,7 @@ public class OptionService {
                 option.setExpirationDate(optJson.getLong("expiration"));
                 option.setIv(optJson.getDouble("impliedVolatility"));
                 option.setItm(optJson.getBoolean("inTheMoney"));
+                option.setLastTradeDate(optJson.getLong("lastTradeDate"));
                 option.setLastPrice(optJson.getDouble("lastPrice"));
                 switch (priceType) {
                     case ask -> option.setPrice(option.getAsk());

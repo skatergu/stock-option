@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Option {
     long expirationDate;
+    long lastTradeDate;
     String type;  //call or put
     String symbol;
     double strike;
@@ -111,6 +112,14 @@ public class Option {
 
     public double getPrice() {
         return this.price;
+    }
+
+    public long getLastTradeDate() {
+        return lastTradeDate;
+    }
+
+    public void setLastTradeDate(long lastTradeDate) {
+        this.lastTradeDate = lastTradeDate;
     }
 
     @Override

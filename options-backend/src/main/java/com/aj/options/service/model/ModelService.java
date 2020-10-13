@@ -104,16 +104,20 @@ public class ModelService {
         double[] y1 = new double[y.length -1];
 
         for (int i = 1; i < moduleValues.length - 1; i++) {
-            // copy all x[] values to x1[] except the x[i] which we want to calculate module value
-            x1[i - 1] = x[i - 1];
-            System.arraycopy(x, i + 1, x1, i, x1.length - i);
+            try {
+                // copy all x[] values to x1[] except the x[i] which we want to calculate module value
+                x1[i - 1] = x[i - 1];
+                System.arraycopy(x, i + 1, x1, i, x1.length - i);
 
-            // copy all y[] values to y1[] except the y[i] which we want to calculate module value
-            y1[i - 1] = y[i - 1];
-            System.arraycopy(y, i + 1, y1, i, y1.length - i);
+                // copy all y[] values to y1[] except the y[i] which we want to calculate module value
+                y1[i - 1] = y[i - 1];
+                System.arraycopy(y, i + 1, y1, i, y1.length - i);
 
-            UnivariateFunction  func = supplier.get().interpolate(x1, y1);
-            moduleValues[i] = func.value(x[i]);
+                UnivariateFunction func = supplier.get().interpolate(x1, y1);
+                moduleValues[i] = func.value(x[i]);
+            } catch (Exception e) {
+                System.err.println(e);
+            }
         }
 
         return moduleValues;
