@@ -35,6 +35,7 @@
       
 
       <div class="result-padding" *ngIf='optionRes'>
+        <p class="result-font"> Current Time: {{ currentTime | date:'medium' }}</p>
         <p class="result-font"> Option Symbol: {{ optionRes.symbol | uppercase }} </p>
         <p class="result-font"> Underlying Stock: {{ getControlValue(['ulSymbol']) | uppercase}} </p>
         <p class="result-font"> Underlying Stock Price: {{ optionRes.ulPrice }} </p>
@@ -42,6 +43,7 @@
         <p class="result-font"> Strike: {{ optionRes.strike }} </p>
         <p class="result-font"> Option type: {{ optionRes.type}} </p>
         <p class="result-font"> Last trade price: {{ optionRes.lastPrice}} </p>
+        <p class="result-font"> Last trade date: {{ optionRes.lastTradeDate*1000 | date: 'medium' }} </p>
         <p class="result-font"> bid: {{ optionRes.bid}} </p>
         <p class="result-font"> ask: {{ optionRes.ask}} </p>
         <p class="result-font"> Implied Vol: {{ optionRes.iv | number : '1.2-2'}}</p>

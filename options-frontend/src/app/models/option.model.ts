@@ -4,6 +4,7 @@ export class Option {
     symbol: string;
     strike: number;
     lastPrice: number;
+    lastTradeDate: number;
     bid: number;
     ask: number;
     iv: number;

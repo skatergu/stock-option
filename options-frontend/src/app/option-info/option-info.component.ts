@@ -12,6 +12,7 @@ export class OptionInfoComponent implements OnInit {
   expiries: number[];
   optionTypes: string[];
   strikes: number[];
+  currentTime: number;
 
   optionRes: Option;
 
@@ -55,6 +56,7 @@ export class OptionInfoComponent implements OnInit {
   getOption() {
     this.optionsService.getOption(this.optionReq).subscribe(option=> {
       this.optionRes = option;
+      this.currentTime = Date.now();
     })
   }
 
