@@ -30,12 +30,28 @@ so users can find solid trade opportunities by observing different model prices.
 ### Libraries and Plugins
 * [Apache common math](http://commons.apache.org/proper/commons-math/index.html) - Provides math utilities to solve common math problem 
 * [Json Java](https://www.oracle.com/technical-resources/articles/java/json.html) - Parse JSON messages from yahoo finance
-	
-## Setup
-* [Build Frontend](https://github.com/skatergu/stock-option/blob/master/options-frontend)
-* [Build Backend](https://github.com/skatergu/stock-option/tree/master/options-backend)
 
-## Stock Option Pricing
+### Run the applicaiton with IDE
+* Clone the source code from Git repositoy.
+* [Run Frontend](https://github.com/skatergu/stock-option/blob/master/options-frontend)
+* Build and Run Backend: 
+    1. Open Eclipse or Intellij 
+    2. Right click the file com.aj.options.service.OptionsApplicaiton and Run as Java Application
+* Open web browser and navigate to `http://localhost:4200/`
 
-## Price Modeling and Curve Fitting
+### Run the application with Executable JAR
+ `git clone https://github.com/skatergu/stock-option.git` \
+ `cd options-frontend` \
+ `npm install` \
+ `cd ..\options-backend` \
+ `mvn clean install` \
+ `java -jar target/java -jar target/options-backend-0.0.1-SNAPSHOT.jar` 
+ 
+ Open a web browser and navigate http://localhost:8080
 
+## Price Modeling
+It provides four models: 
+* SplineInterpolator
+* AkimaSplineInterpolator
+* Fit one dimension
+* Fit two dimension
