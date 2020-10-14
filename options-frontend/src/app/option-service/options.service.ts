@@ -36,7 +36,7 @@ export class OptionsService {
       queryParams = queryParams.append('optionType', formGroup.get('optionType').value);
       queryParams = queryParams.append('model', formGroup.get('model').value);
       queryParams = queryParams.append('priceType', formGroup.get('priceType').value);
-
+      queryParams = queryParams.append('isInTheMoney', formGroup.get('isInTheMoney').value);
       console.log(queryParams);
 
       return this.http.get<Option[]>(getURL(url), {'params':queryParams});

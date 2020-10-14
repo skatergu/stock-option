@@ -24,6 +24,7 @@ export class OptionModelComponent implements OnInit {
     optionType: new FormControl(),
     model: new FormControl(),
     priceType: new FormControl(this.priceTypes[0]),
+    isInTheMoney: new FormControl(true),
   })
 
   constructor(private optionsService: OptionsService) { }

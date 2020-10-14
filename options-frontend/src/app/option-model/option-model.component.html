@@ -26,14 +26,17 @@
           <mat-option *ngFor="let priceType of priceTypes" [value]="priceType">{{priceType}}</mat-option>
         </mat-select>
       </mat-form-field>
-
-
+   
       <mat-form-field class="space30" appearance="fill">
         <mat-label>Models: </mat-label>
         <mat-select formControlName="model" (selectionChange)="onChange()">
           <mat-option *ngFor="let model of models" [value]="model">{{model}}</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-checkbox class="space30" formControlName = "isInTheMoney" (change)="onChange()">
+        Is In the Money
+      </mat-checkbox>
     </form>
 </div>
 <div>
