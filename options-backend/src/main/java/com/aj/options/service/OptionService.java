@@ -59,13 +59,14 @@ public class OptionService {
         return strikeList;
     }
 
-    public List<Option> getOptions(String ulSymbol, long expiry, String type, PriceType priceType, ModelType model) throws IOException {
+    public List<Option> getOptions(String ulSymbol, long expiry, String type, PriceType priceType, ModelType model, boolean itm) throws IOException {
         String url = this.yahooFinance + ulSymbol + "?date=" + expiry;
         JSONObject resultJson = this.loadResultJson(url);
         OptionChain optionChain = parseOptionChain(resultJson, priceType);
 
         List<Option> options = optionChain.getAllOptions().stream()
                                    .filter((option -> option.getExpirationDate()==expiry && option.getType().equalsIgnoreCase(type) && Math.abs(option.getPrice()) > 0.01 ))
+                                   .filter(option -> option.isItm()==itm)
                                    .collect(Collectors.toList());
 
         modelService.calcModelData(options, model);
@@ -152,8 +153,7 @@ public class OptionService {
                 }
 
                 option.setUlPrice(ulPx);
-                if (option.isItm())
-                    options.add(option);
+                options.add(option);
             }
             catch (Exception e) {
                 System.err.println(e.toString());

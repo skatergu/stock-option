@@ -34,10 +34,11 @@ public class OptionController {
 
     @GetMapping("/getOptions")
     public List<Option> getOptions(@RequestParam String ulSymbol, @RequestParam String expiry, @RequestParam String optionType,
-                                   @RequestParam String priceType, @RequestParam String model) throws IOException {
+                                   @RequestParam String priceType, @RequestParam String model, @RequestParam String isInTheMoney) throws IOException {
         ModelType modelType = ModelType.valueOf(model);
         PriceType pxType = PriceType.valueOf(priceType);
-        return optionService.getOptions(ulSymbol, Long.valueOf(expiry), optionType, pxType, modelType);
+        boolean itm = Boolean.valueOf(isInTheMoney);
+        return optionService.getOptions(ulSymbol, Long.valueOf(expiry), optionType, pxType, modelType, itm);
     }
 
     @GetMapping("/getOption")
