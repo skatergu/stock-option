@@ -11,7 +11,7 @@ based on the difference between real price and model price. It also provides mul
 so users can find solid trade opportunities by observing different model prices.
 	
 ## Application Screenshots
-![FitTwo price model](images/fitTwoCall.png)
+![FitTwo price model](images/fitTwoPut.png)
 ![Quote Lookup](images/quoteLookUp.png)
 
 ## Data
