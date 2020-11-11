@@ -2,8 +2,8 @@
 * [General info](#general-info)
 * [Application Screenshots](#application-screenshots)
 * [Data](#data)
-* [Technologies](#technologies)
-* [Setup](#setup)
+* [Technologies](#technologies-&-Open-source-libraries)
+* [Setup](#Run-the-application-with-IDE)
 
 ## General Info
 This application provides a user-friendly interface to find trade opportunities 
@@ -30,8 +30,9 @@ so users can find solid trade opportunities by observing different model prices.
 ### Libraries and Plugins
 * [Apache common math](http://commons.apache.org/proper/commons-math/index.html) - Provides math utilities to solve common math problem 
 * [Json Java](https://www.oracle.com/technical-resources/articles/java/json.html) - Parse JSON messages from yahoo finance
+* [lombok](https://projectlombok.org/features/all)  - Reduce boilerplate code
 
-### Run the applicaiton with IDE
+### Run the application with IDE
 * Clone the source code from Git repositoy.
 * [Run Frontend](https://github.com/skatergu/stock-option/blob/master/options-frontend)
 * Build and Run Backend: 
