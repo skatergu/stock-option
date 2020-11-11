@@ -2,8 +2,8 @@
 * [General info](#general-info)
 * [Application Screenshots](#application-screenshots)
 * [Data](#data)
-* [Technologies](#technologies-&-Open-source-libraries)
-* [Setup](#Run-the-application-with-IDE)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
 ## General Info
 This application provides a user-friendly interface to find trade opportunities 
@@ -17,7 +17,7 @@ so users can find solid trade opportunities by observing different model prices.
 ## Data
 * [Yahoo finance](https://query2.finance.yahoo.com/v7/finance/options/qqq) - Opitons
 
-## Technologies & Open-source libraries
+## Technologies
 
 ### Backend: 
 * [JDK 14](https://docs.oracle.com/en/java/javase/14/) - Java™ Platform, Standard Edition Development Kit
@@ -32,6 +32,7 @@ so users can find solid trade opportunities by observing different model prices.
 * [Json Java](https://www.oracle.com/technical-resources/articles/java/json.html) - Parse JSON messages from yahoo finance
 * [lombok](https://projectlombok.org/features/all)  - Reduce boilerplate code
 
+## Setup
 ### Run the application with IDE
 * Clone the source code from Git repositoy.
 * [Run Frontend](https://github.com/skatergu/stock-option/blob/master/options-frontend)
